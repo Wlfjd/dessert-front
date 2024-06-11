@@ -25,8 +25,8 @@ export const priceTempState = atomFamily<IPriceType, FilterFamilyIDType>({
   default: [LIMIT_MIN_PRICE, LIMIT_MAX_PRICE]
 });
 
-export const isOrderAvailableTempState = atomFamily<boolean, FilterFamilyIDType>({
-  key: 'isOrderAvailable',
+export const orderAvailableTodayTempState = atomFamily<boolean, FilterFamilyIDType>({
+  key: 'orderAvailableToday',
   default: undefined
 });
 
@@ -43,7 +43,7 @@ export const filterValueTempState = selectorFamily<IFilterType, FilterFamilyIDTy
       const category = get(categoryTempState(filterFamilyId));
       const tags = get(tagsTempState(filterFamilyId));
       const price = get(priceTempState(filterFamilyId));
-      const isOrderAvailable = get(isOrderAvailableTempState(filterFamilyId));
+      const orderAvailableToday = get(orderAvailableTodayTempState(filterFamilyId));
       const filterValue = get(filterValueState(filterFamilyId));
 
       return {
@@ -51,7 +51,7 @@ export const filterValueTempState = selectorFamily<IFilterType, FilterFamilyIDTy
         category,
         tags,
         price,
-        isOrderAvailable
+        orderAvailableToday
       };
     },
   set:
@@ -62,6 +62,6 @@ export const filterValueTempState = selectorFamily<IFilterType, FilterFamilyIDTy
       set(categoryTempState(filterFamilyId), newValue.category);
       set(tagsTempState(filterFamilyId), newValue.tags);
       set(priceTempState(filterFamilyId), newValue.price);
-      set(isOrderAvailableTempState(filterFamilyId), newValue.isOrderAvailable);
+      set(orderAvailableTodayTempState(filterFamilyId), newValue.orderAvailableToday);
     }
 });

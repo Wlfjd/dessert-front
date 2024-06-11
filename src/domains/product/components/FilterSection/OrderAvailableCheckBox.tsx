@@ -12,10 +12,10 @@ interface OrderAvailableCheckBoxProps {
 
 const OrderAvailableCheckBox = ({ filterFamilyId }: OrderAvailableCheckBoxProps) => {
   const [filterValue, setFilterValue] = useRecoilState(filterValueState(filterFamilyId));
-  const isChecked = filterValue.isOrderAvailable;
+  const isChecked = filterValue.orderAvailableToday;
 
   const handleCheckChange = () => {
-    setFilterValue({ ...filterValue, isOrderAvailable: !isChecked });
+    setFilterValue({ ...filterValue, orderAvailableToday: !isChecked });
   };
 
   return (

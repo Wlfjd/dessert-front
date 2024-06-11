@@ -14,12 +14,13 @@ interface FilterModalProps {
 }
 
 const FilterModal = ({ filterFamilyId }: FilterModalProps) => (
-  <Modal title="필터">
+  <Modal title="필터" className="py-[18px]">
     <TagsSection filterFamilyId={filterFamilyId} />
     <hr className="bg-gray-100" />
     <CategorySection filterFamilyId={filterFamilyId} />
     <hr className="bg-gray-100" />
     <PriceSection filterFamilyId={filterFamilyId} />
+    <hr className="bg-gray-100" />
     <IsOrderAvailableCheckbox filterFamilyId={filterFamilyId} />
     <ButtonSection filterFamilyId={filterFamilyId} />
   </Modal>

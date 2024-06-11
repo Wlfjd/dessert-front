@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil';
 
-import { isOrderAvailableTempState } from '@/domains/product/atoms';
+import { orderAvailableTodayTempState } from '@/domains/product/atoms';
 import { FilterFamilyIDType } from '@/domains/product/types/filterType';
 import CheckBox from '@/shared/components/Checkbox';
 import PaddingWrapper from '@/shared/components/PaddingWrapper';
@@ -11,7 +11,7 @@ interface OrderAvailableCheckBoxProps {
 
 const IsOrderAvailableCheckbox = ({ filterFamilyId }: OrderAvailableCheckBoxProps) => {
   const [isAvailableOrder, setIsAvailableOrder] = useRecoilState(
-    isOrderAvailableTempState(filterFamilyId)
+    orderAvailableTodayTempState(filterFamilyId)
   );
 
   const handleCheckChange = () => {

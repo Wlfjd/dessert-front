@@ -10,5 +10,5 @@ export const INIT_FILTER_VALUE = {
   tags: undefined,
   price: [LIMIT_MIN_PRICE, LIMIT_MAX_PRICE],
   sort: '추천순',
-  isOrderAvailable: false
+  orderAvailableToday: false
 };

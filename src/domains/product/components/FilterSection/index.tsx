@@ -2,17 +2,17 @@
 
 import { useRecoilState } from 'recoil';
 
-import { FILTER_VALUES } from '@/domains/product/constants/filterValues';
-import useModal from '@/shared/hooks/useModal';
-import PaddingWrapper from '@/shared/components/PaddingWrapper';
 import FilterIcon from '@/domains/product/assets/filter.svg';
 import { filterValueState } from '@/domains/product/atoms';
 import FilterModal from '@/domains/product/components/alert-box/FilterModal';
 import OrderAvailableCheckBox from '@/domains/product/components/FilterSection/OrderAvailableCheckBox';
 import ProductSortSelect from '@/domains/product/components/FilterSection/ProductSortSelect';
+import { FILTER_VALUES } from '@/domains/product/constants/filterValues';
 import { TAG } from '@/domains/product/constants/tag';
 import { FilterFamilyIDType } from '@/domains/product/types/filterType';
 import { getIngredientTag, getPriceTag } from '@/domains/product/utils/getTag';
+import PaddingWrapper from '@/shared/components/PaddingWrapper';
+import useModal from '@/shared/hooks/useModal';
 
 interface FilterSectionProps {
   filterFamilyId: FilterFamilyIDType;
@@ -42,7 +42,7 @@ const FilterSection = ({ filterFamilyId }: FilterSectionProps) => {
   };
 
   return (
-    <PaddingWrapper className="flex flex-col gap-[16px] pb-[12px] border-b-[1px] border-solid border-gray-100">
+    <PaddingWrapper className="flex flex-col  gap-[16px] pb-[12px] border-b-[1px] border-solid border-gray-100">
       <div className="flex justify-between items-center gap-[6px]">
         <div className="flex gap-[6px] overflow-x-scroll scrollbar-hide">
           {filterTagList.map(
