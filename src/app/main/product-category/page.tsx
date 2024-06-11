@@ -1,4 +1,4 @@
-import CategoryListSection from '@/blocks/product/CategoryListSection';
+import CategoryListSection from '@/blocks/main/(list)/CategoryListSection';
 
 const CategoryPage = () => <CategoryListSection />;
 

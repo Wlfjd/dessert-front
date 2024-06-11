@@ -1,48 +1,25 @@
-import DetailFixedBtnSection from '@/blocks/product/DetailFixedBtnSection';
-import DetailInformationImgs from '@/blocks/product/DetailInformationImgs';
-import DetailOrderAvailableDays from '@/blocks/product/DetailOrderAvailableDays';
-import DetailProductComposition from '@/blocks/product/DetailProductComposition';
-import ProductDetailImgs from '@/blocks/product/DetailProductImgs';
-import DetailProductSummary from '@/blocks/product/DetailProductSummary';
-import GrayDivider from '@/shared/components/GrayDivider';
-import DetailStoreInfo from '@/domains/store/components/DetailStoreInfo';
-import Header from '@/shared/components/Header';
-import { ShareIcon } from '@/shared/components/icons';
-import getProductDetail from '@/domains/product/queries/getProductDetail';
+// interface ProductDetailProps {
+//   params: { productId: string };
+// }
 
-interface ProductDetailProps {
-  params: { productId: string };
-}
+import BoardDetailsSection from '@/blocks/main/(detail)/products/[productId]/info/BoardDetailSection';
+import BoardImagesSection from '@/blocks/main/(detail)/products/[productId]/info/BoardImagesSection';
+import ProductOptionsSetion from '@/blocks/main/(detail)/products/[productId]/info/ProductOptionsSection';
+import ReviewBadgeSection from '@/blocks/main/(detail)/products/[productId]/info/ReviewBadgeSection';
+import SimpleInfoWithStoreSection from '@/blocks/main/(detail)/products/[productId]/info/SimpleInfoWithStoreSection';
 
-const ProductDetail = async ({ params: { productId } }: ProductDetailProps) => {
-  const data = await getProductDetail(productId);
+const ProductDetailPage = () => (
+  <>
+    <BoardImagesSection />
 
-  return (
-    <>
-      <Header
-        title={`[${data.store.storeName}] ${data.board.title}`}
-        content={
-          <button type="button" aria-label="공유 버튼">
-            <ShareIcon />
-          </button>
-        }
-        back
-      />
-      <ProductDetailImgs boardImages={data.board.images} isBundled={data.board.isBundled} />
-      <DetailStoreInfo store={data.store} />
+    <SimpleInfoWithStoreSection />
 
-      <GrayDivider />
+    <ReviewBadgeSection />
 
-      <DetailProductSummary data={data} />
+    <ProductOptionsSetion />
 
-      <GrayDivider />
+    <BoardDetailsSection />
+  </>
+);
 
-      <DetailOrderAvailableDays data={data} />
-      <DetailProductComposition data={data} />
-      <DetailFixedBtnSection data={data} />
-      <DetailInformationImgs data={data} />
-    </>
-  );
-};
-
-export default ProductDetail;
+export default ProductDetailPage;

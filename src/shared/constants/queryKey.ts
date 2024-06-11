@@ -10,7 +10,12 @@ const QUERY_KEY = {
   main: 'main',
   wish: 'wish',
   product: 'product',
-  notification: 'notification'
+  keyword: 'keyword',
+  autoComplete: 'autoComplete',
+  notification: 'notification',
+  productDetailStoreInfo: 'product detail store info',
+  boardDetail: 'board detail',
+  productDetail: 'product detail'
 };
 
 export default QUERY_KEY;

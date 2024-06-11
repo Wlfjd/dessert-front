@@ -1,7 +1,7 @@
-import { useInfiniteQuery, GetNextPageParamFunction } from '@tanstack/react-query';
+import searchService from '@/domains/search/queries/service';
 import { IAllStoreType } from '@/domains/search/types';
 import { storeQueryKey } from '@/shared/queries/queryKey';
-import searchService from '@/domains/search/queries/service';
+import { GetNextPageParamFunction, useInfiniteQuery } from '@tanstack/react-query';
 
 interface QueryHookProps {
   keyword: string;
